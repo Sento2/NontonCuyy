@@ -1,10 +1,10 @@
-package com.Kel6.nontoncuyy.di
+package com.kel6.nontoncuyy.di
 
-import com.Kel6.nontoncuyy.data.remote.MovieApiService
-import com.Kel6.nontoncuyy.data.repository.MovieRepository
-import com.Kel6.nontoncuyy.ui.viewmodel.HomeViewModel
-import com.Kel6.nontoncuyy.ui.viewmodel.DetailViewModel
-import com.Kel6.nontoncuyy.ui.viewmodel.MovieViewModel
+import com.kel6.nontoncuyy.data.remote.MovieApiService
+import com.kel6.nontoncuyy.data.repository.MovieRepository
+import com.kel6.nontoncuyy.ui.viewmodel.HomeViewModel
+import com.kel6.nontoncuyy.ui.viewmodel.DetailViewModel
+import com.kel6.nontoncuyy.ui.viewmodel.MovieViewModel
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.android.Android
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation

@@ -1,4 +1,4 @@
-package com.Kel6.nontoncuyy.ui.screen
+package com.kel6.nontoncuyy.ui.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -17,9 +17,9 @@ import androidx.compose.ui.unit.sp
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemContentType
 import androidx.paging.compose.itemKey
-import com.Kel6.nontoncuyy.data.model.Movie
-import com.Kel6.nontoncuyy.ui.component.MovieItemComponent
-import com.Kel6.nontoncuyy.ui.viewmodel.HomeViewModel
+import com.kel6.nontoncuyy.data.model.Movie
+import com.kel6.nontoncuyy.ui.component.MovieItemComponent
+import com.kel6.nontoncuyy.ui.viewmodel.HomeViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

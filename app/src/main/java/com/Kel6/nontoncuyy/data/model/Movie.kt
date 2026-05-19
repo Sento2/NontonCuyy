@@ -1,4 +1,4 @@
-package com.Kel6.nontoncuyy.data.model
+package com.kel6.nontoncuyy.data.model
 
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.Serializable

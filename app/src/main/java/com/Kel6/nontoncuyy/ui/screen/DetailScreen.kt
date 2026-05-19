@@ -1,4 +1,4 @@
-package com.Kel6.nontoncuyy.ui.screen
+package com.kel6.nontoncuyy.ui.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -16,7 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.Kel6.nontoncuyy.data.model.Movie
+import com.kel6.nontoncuyy.data.model.Movie
 
 @Composable
 fun DetailScreen(
