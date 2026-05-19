@@ -18,4 +18,9 @@ class MovieRepository(private val apiService: MovieApiService) {
             pagingSourceFactory = { MoviePagingSource(apiService) }
         ).flow
     }
+
+    suspend fun addMovie(movie: Movie): Movie {
+        return apiService.addMovie(movie)
+    }
+
 }
