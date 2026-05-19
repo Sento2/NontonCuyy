@@ -11,7 +11,7 @@ import kotlinx.serialization.json.Json
 
 object KtorClient {
     // URL utama dari MockAPI dosenmu
-    private const val BASE_URL = "https://68ff8dfbe02b16d1753e765d.mockapi.io/film"
+    private const val BASE_URL = "https://68ff8dfbe02b16d1753e765d.mockapi.io/"
 
     val httpClient = HttpClient(Android) {
         // Pengaturan batas waktu (mencegah aplikasi freeze jika internet lemot)

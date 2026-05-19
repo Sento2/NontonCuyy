@@ -2,6 +2,7 @@ package com.Kel6.nontoncuyy
 
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerialName
+import java.io.Serializable as JavaSerializable
 
 @Serializable
 data class Film(
@@ -25,4 +26,4 @@ data class Film(
 
     @SerialName("url_trailer")
     val urlTrailer: String
-)
+) : JavaSerializable
