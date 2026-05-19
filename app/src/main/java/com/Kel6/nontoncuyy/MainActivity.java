@@ -2,6 +2,7 @@ package com.Kel6.nontoncuyy;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
@@ -56,9 +57,16 @@ public class MainActivity extends AppCompatActivity {
             } else if (itemId == R.id.nav_watchlist) {
                 loadFragment(new WatchlistFragment());
                 return true;
+            } else if (itemId == R.id.nav_add) {
+                loadFragment(new AddMovieFragment());
+                return true;
             }
             return false;
         });
+    }
+
+    public void selectHomeTab() {
+        bottomNavigationView.setSelectedItemId(R.id.nav_home);
     }
 
     public void openViewAll(String title, List<Film> movies) {

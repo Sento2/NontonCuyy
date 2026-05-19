@@ -1,11 +1,14 @@
 package com.Kel6.nontoncuyy;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -66,6 +69,23 @@ public class DetailFragment extends Fragment {
 
     private void initViews(View view) {
         view.findViewById(R.id.btnBack).setOnClickListener(v -> requireActivity().getSupportFragmentManager().popBackStack());
+
+        view.findViewById(R.id.btnPlayNow).setOnClickListener(v -> {
+            if (movie != null && movie.getUrlTrailer() != null && !movie.getUrlTrailer().isEmpty()) {
+                String trailerUrl = movie.getUrlTrailer();
+                if (!trailerUrl.startsWith("http")) {
+                    trailerUrl = "https://www.youtube.com/watch?v=" + trailerUrl;
+                }
+                try {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(trailerUrl));
+                    startActivity(intent);
+                } catch (Exception e) {
+                    Toast.makeText(getContext(), "Could not open trailer", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Toast.makeText(getContext(), "Trailer not available", Toast.LENGTH_SHORT).show();
+            }
+        });
         
         TextView btnWatchlist = view.findViewById(R.id.btnWatchlist);
         btnWatchlist.setOnClickListener(v -> {
