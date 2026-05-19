@@ -1,11 +1,11 @@
-package com.Kel6.nontoncuyy.data.remote
+package com.kel6.nontoncuyy.data.remote
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.Kel6.nontoncuyy.data.model.Movie
+import com.kel6.nontoncuyy.data.model.Movie
 
 class MoviePagingSource(
-    private val apiService: MovieApiService
+    private val apiService: MovieApiService,
 ) : PagingSource<Int, Movie>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Movie> {

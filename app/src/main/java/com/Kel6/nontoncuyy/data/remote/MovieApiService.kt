@@ -1,6 +1,6 @@
-package com.Kel6.nontoncuyy.data.remote
+package com.kel6.nontoncuyy.data.remote
 
-import com.Kel6.nontoncuyy.data.model.Movie
+import com.kel6.nontoncuyy.data.model.Movie
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get

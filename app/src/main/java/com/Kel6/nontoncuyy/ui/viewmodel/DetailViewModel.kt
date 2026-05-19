@@ -1,7 +1,7 @@
-package com.Kel6.nontoncuyy.ui.viewmodel
+package com.kel6.nontoncuyy.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.Kel6.nontoncuyy.data.model.Movie
+import com.kel6.nontoncuyy.data.model.Movie
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 

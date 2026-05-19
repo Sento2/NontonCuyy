@@ -1,10 +1,10 @@
-package com.Kel6.nontoncuyy.ui.viewmodel
+package com.kel6.nontoncuyy.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.Kel6.nontoncuyy.data.model.Movie
-import com.Kel6.nontoncuyy.data.repository.MovieRepository
-import com.Kel6.nontoncuyy.ui.state.MovieUiState
+import com.kel6.nontoncuyy.data.model.Movie
+import com.kel6.nontoncuyy.data.repository.MovieRepository
+import com.kel6.nontoncuyy.ui.state.MovieUiState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

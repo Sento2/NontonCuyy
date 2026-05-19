@@ -1,4 +1,4 @@
-package com.Kel6.nontoncuyy.ui.screen
+package com.kel6.nontoncuyy.ui.screen
 
 import android.content.Intent
 import android.net.Uri
