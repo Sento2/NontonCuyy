@@ -1,15 +1,15 @@
-package com.kel6.nontoncuyy.data.repository
+package com.Kel6.nontoncuyy.data.repository
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import com.kel6.nontoncuyy.data.model.Movie
-import com.kel6.nontoncuyy.data.remote.MovieApiService
-import com.kel6.nontoncuyy.data.remote.MoviePagingSource
+import com.Kel6.nontoncuyy.data.model.Movie
+import com.Kel6.nontoncuyy.data.remote.MovieApiService
+import com.Kel6.nontoncuyy.data.remote.MoviePagingSource
 import kotlinx.coroutines.flow.Flow
 
 class MovieRepository(private val apiService: MovieApiService) {
-    fun getMovies(): Flow<PagingData<Movie>> {
+    fun getMoviesPaged(): Flow<PagingData<Movie>> {
         return Pager(
             config = PagingConfig(
                 pageSize = 10,
@@ -17,6 +17,10 @@ class MovieRepository(private val apiService: MovieApiService) {
             ),
             pagingSourceFactory = { MoviePagingSource(apiService) }
         ).flow
+    }
+
+    suspend fun getAllMovies(): List<Movie> {
+        return apiService.getMovies(page = 1, limit = 100)
     }
 
     suspend fun addMovie(movie: Movie): Movie {

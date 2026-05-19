@@ -1,4 +1,4 @@
-package com.kel6.nontoncuyy
+package com.Kel6.nontoncuyy
 
 import android.net.Uri
 import android.os.Bundle
@@ -18,11 +18,11 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.kel6.nontoncuyy.ui.screen.DetailScreen
-import com.kel6.nontoncuyy.ui.screen.HomeScreen
-import com.kel6.nontoncuyy.ui.screen.MoviePlayerScreen
-import com.kel6.nontoncuyy.ui.viewmodel.DetailViewModel
-import com.kel6.nontoncuyy.ui.viewmodel.HomeViewModel
+import com.Kel6.nontoncuyy.ui.screen.DetailScreen
+import com.Kel6.nontoncuyy.ui.screen.HomeScreen
+import com.Kel6.nontoncuyy.ui.screen.MoviePlayerScreen
+import com.Kel6.nontoncuyy.ui.viewmodel.DetailViewModel
+import com.Kel6.nontoncuyy.ui.viewmodel.HomeViewModel
 import org.koin.androidx.compose.koinViewModel
 
 class MainActivity : ComponentActivity() {
