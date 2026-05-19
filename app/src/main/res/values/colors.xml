@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+    <!-- Common Colors -->
+    <color name="primary">#F48FB1</color>
+    <color name="primary_variant">#C2185B</color>
+    <color name="secondary">#233554</color>
+    <color name="tertiary">#8892B0</color>
+    <color name="neutral">#CCD6F6</color>
+
+    <!-- Night Mode Palette -->
+    <color name="bg_dark">#0B0F19</color>
+    <color name="background_dark">#0B0F19</color> <!-- Alias for backward compatibility -->
+    <color name="surface_dark">#1A1D26</color>
+    <color name="text_night_primary">#CCD6F6</color>
+    <color name="text_night_secondary">#8892B0</color>
+
+    <!-- Light Mode Palette -->
+    <color name="bg_light">#FAFAFA</color>
+    <color name="surface_light">#FFFFFF</color>
+    <color name="text_light_primary">#0B0F19</color>
+    <color name="text_light_secondary">#233554</color>
+
+    <!-- Helpers -->
     <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="transparent">#00000000</color>
 </resources>
