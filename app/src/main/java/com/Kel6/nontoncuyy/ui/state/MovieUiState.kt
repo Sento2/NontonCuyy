@@ -1,6 +1,6 @@
-package com.kel6.nontoncuyy.ui.state
+package com.Kel6.nontoncuyy.ui.state
 
-import com.kel6.nontoncuyy.data.model.Movie
+import com.Kel6.nontoncuyy.data.model.Movie
 
 sealed interface MovieUiState {
     object Loading : MovieUiState

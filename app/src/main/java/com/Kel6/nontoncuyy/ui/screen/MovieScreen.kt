@@ -1,19 +1,18 @@
-package com.kel6.nontoncuyy.ui.screen
+package com.Kel6.nontoncuyy.ui.screen
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.kel6.nontoncuyy.data.model.Movie
-import com.kel6.nontoncuyy.ui.state.MovieUiState
-import com.kel6.nontoncuyy.ui.viewmodel.MovieViewModel
+import com.Kel6.nontoncuyy.data.model.Movie
+import com.Kel6.nontoncuyy.ui.state.MovieUiState
+import com.Kel6.nontoncuyy.ui.viewmodel.MovieViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -22,13 +21,6 @@ fun MovieScreen(
     onMovieClick: (Movie) -> Unit
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
-
-    // Handle side effects
-    LaunchedEffect(uiState) {
-        if (uiState is MovieUiState.AddSuccess) {
-            viewModel.resetStatus()
-        }
-    }
 
     Scaffold(
         topBar = {
@@ -40,22 +32,17 @@ fun MovieScreen(
                 .fillMaxSize()
                 .padding(paddingValues)
         ) {
-            when (val state = uiState) {
-                is MovieUiState.Loading, is MovieUiState.AddLoading -> {
+            when (uiState) {
+                is MovieUiState.Loading -> {
                     CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
                 }
                 is MovieUiState.Success -> {
-                    MovieContent(movies = state.movies, onMovieClick = onMovieClick)
+                    val movies = (uiState as MovieUiState.Success).movies
+                    MovieContent(movies = movies, onMovieClick = onMovieClick)
                 }
                 is MovieUiState.Error -> {
-                    ErrorContent(message = state.message, onRetry = { viewModel.getAllMovies() })
-                }
-                is MovieUiState.AddSuccess -> {
-                    // Handled by LaunchedEffect, show loading while transitioning
-                    CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
-                }
-                is MovieUiState.AddError -> {
-                    ErrorContent(message = state.message, onRetry = { viewModel.resetStatus() })
+                    val message = (uiState as MovieUiState.Error).message
+                    ErrorContent(message = message, onRetry = { viewModel.getAllMovies() })
                 }
             }
         }

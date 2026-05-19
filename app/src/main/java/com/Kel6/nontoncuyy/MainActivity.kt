@@ -1,4 +1,4 @@
-package com.kel6.nontoncuyy
+package com.Kel6.nontoncuyy
 
 import android.net.Uri
 import android.os.Bundle
@@ -18,11 +18,11 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.kel6.nontoncuyy.ui.screen.DetailScreen
-import com.kel6.nontoncuyy.ui.screen.HomeScreen
-import com.kel6.nontoncuyy.ui.screen.MoviePlayerScreen
-import com.kel6.nontoncuyy.ui.viewmodel.DetailViewModel
-import com.kel6.nontoncuyy.ui.viewmodel.HomeViewModel
+import com.Kel6.nontoncuyy.ui.screen.DetailScreen
+import com.Kel6.nontoncuyy.ui.screen.HomeScreen
+import com.Kel6.nontoncuyy.ui.screen.MoviePlayerScreen
+import com.Kel6.nontoncuyy.ui.viewmodel.DetailViewModel
+import com.Kel6.nontoncuyy.ui.viewmodel.HomeViewModel
 import org.koin.androidx.compose.koinViewModel
 
 class MainActivity : ComponentActivity() {
@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
             NontonCuyyTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background,
+                    color = MaterialTheme.colorScheme.background
                 ) {
                     AppNavigation()
                 }
@@ -50,11 +50,12 @@ fun AppNavigation() {
         composable("home") {
             val homeViewModel: HomeViewModel = koinViewModel()
             HomeScreen(
-                viewModel = homeViewModel
-            ) { movie ->
-                detailViewModel.selectMovie(movie)
-                navController.navigate("detail")
-            }
+                viewModel = homeViewModel,
+                onMovieClick = { movie ->
+                    detailViewModel.selectMovie(movie)
+                    navController.navigate("detail")
+                }
+            )
         }
         composable("detail") {
             val movie by detailViewModel.selectedMovie.collectAsState()
@@ -70,13 +71,11 @@ fun AppNavigation() {
         }
         composable(
             route = "player?url={url}",
-            arguments = listOf(
-                navArgument("url") {
-                    type = NavType.StringType
-                    nullable = true
-                    defaultValue = ""
-                }
-            )
+            arguments = listOf(navArgument("url") { 
+                type = NavType.StringType
+                nullable = true
+                defaultValue = ""
+            })
         ) { backStackEntry ->
             val url = backStackEntry.arguments?.getString("url") ?: ""
             MoviePlayerScreen(urlTrailer = url)

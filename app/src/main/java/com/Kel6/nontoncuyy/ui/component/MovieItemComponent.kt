@@ -1,4 +1,4 @@
-package com.kel6.nontoncuyy.ui.component
+package com.Kel6.nontoncuyy.ui.component
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -11,7 +11,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.kel6.nontoncuyy.data.model.Movie
+import com.Kel6.nontoncuyy.data.model.Movie
 
 @Composable
 fun MovieItemComponent(

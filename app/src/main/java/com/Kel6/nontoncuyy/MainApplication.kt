@@ -1,7 +1,7 @@
-package com.kel6.nontoncuyy
+package com.Kel6.nontoncuyy
 
 import android.app.Application
-import com.kel6.nontoncuyy.di.appModule
+import com.Kel6.nontoncuyy.di.appModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
