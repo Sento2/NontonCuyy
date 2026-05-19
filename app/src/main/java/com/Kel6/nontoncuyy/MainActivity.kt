@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
             NontonCuyyTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    color = MaterialTheme.colorScheme.background,
                 ) {
                     AppNavigation()
                 }
@@ -50,12 +50,11 @@ fun AppNavigation() {
         composable("home") {
             val homeViewModel: HomeViewModel = koinViewModel()
             HomeScreen(
-                viewModel = homeViewModel,
-                onMovieClick = { movie ->
-                    detailViewModel.selectMovie(movie)
-                    navController.navigate("detail")
-                }
-            )
+                viewModel = homeViewModel
+            ) { movie ->
+                detailViewModel.selectMovie(movie)
+                navController.navigate("detail")
+            }
         }
         composable("detail") {
             val movie by detailViewModel.selectedMovie.collectAsState()
@@ -71,11 +70,13 @@ fun AppNavigation() {
         }
         composable(
             route = "player?url={url}",
-            arguments = listOf(navArgument("url") { 
-                type = NavType.StringType
-                nullable = true
-                defaultValue = ""
-            })
+            arguments = listOf(
+                navArgument("url") {
+                    type = NavType.StringType
+                    nullable = true
+                    defaultValue = ""
+                }
+            )
         ) { backStackEntry ->
             val url = backStackEntry.arguments?.getString("url") ?: ""
             MoviePlayerScreen(urlTrailer = url)

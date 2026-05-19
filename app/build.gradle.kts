@@ -44,6 +44,17 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.constraintlayout)
     implementation(libs.material)
+
+    // Compose
+    val composeBom = platform("androidx.compose:compose-bom:2024.10.00")
+    implementation(composeBom)
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui-graphics")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    implementation("androidx.compose.material3:material3")
+    implementation("androidx.compose.material:material-icons-extended")
+    implementation("androidx.activity:activity-compose:1.9.3")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.7")
     
     // Paging
     val pagingVersion = "3.3.2"
@@ -60,6 +71,11 @@ dependencies {
 
     // Coil (Image Loading)
     implementation("io.coil-kt:coil-compose:2.6.0")
+
+    // Media3
+    implementation(libs.media3.exoplayer)
+    implementation(libs.media3.ui)
+    implementation(libs.media3.common)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.espresso.core)
