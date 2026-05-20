@@ -23,7 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="@string/nontoncuy"
+                android:text="@string/app_name"
                 android:textColor="@color/primary"
                 android:textSize="22sp"
                 android:textStyle="bold" />
@@ -53,11 +53,13 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_marginHorizontal="24dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/bg_navbar"
+        android:minHeight="64dp"
+        android:paddingVertical="8dp"
         app:elevation="8dp"
         app:itemIconTint="@color/nav_item_color_state"
         app:itemRippleColor="@color/primary"

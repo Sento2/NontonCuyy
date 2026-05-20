@@ -1,7 +1,9 @@
-package com.kel6.nontoncuyy
+package com.Kel6.nontoncuyy
 
 import io.ktor.client.call.*
 import io.ktor.client.request.*
+import io.ktor.http.ContentType
+import io.ktor.http.contentType
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -10,14 +12,29 @@ class MovieRepository {
 
     // Fungsi utama untuk mengambil semua data film dari endpoint /film
     suspend fun getAllFilms(): List<Film> {
-        return withContext(Dispatchers.IO) { // Diproses di background thread agar UI tetap lancar
+        return withContext(Dispatchers.IO) { 
             try {
-                // Ktor akan langsung membaca JSON Array dari dosen menjadi List<Film>
                 val response: List<Film> = client.get("film").body()
                 response
             } catch (e: Exception) {
                 e.printStackTrace()
-                emptyList() // Jika server down atau internet putus, kembalikan list kosong
+                emptyList<Film>()
+            }
+        }
+    }
+
+    // Fungsi untuk menambahkan film baru (POST)
+    suspend fun addFilm(film: Film): Boolean {
+        return withContext(Dispatchers.IO) {
+            try {
+                val response = client.post("film") {
+                    contentType(ContentType.Application.Json)
+                    setBody(film)
+                }
+                response.status.value in 200..299
+            } catch (e: Exception) {
+                e.printStackTrace()
+                false
             }
         }
     }
