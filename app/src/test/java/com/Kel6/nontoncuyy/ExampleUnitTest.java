@@ -1,4 +1,4 @@
-package com.kel6.nontoncuyy;
+package com.Kel6.nontoncuyy;
 
 import org.junit.Test;
 

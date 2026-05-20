@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.kel6.nontoncuyy"
+    namespace = "com.Kel6.nontoncuyy"
     compileSdk = 36
 
     defaultConfig {

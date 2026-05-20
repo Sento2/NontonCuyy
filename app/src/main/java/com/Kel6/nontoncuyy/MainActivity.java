@@ -1,4 +1,4 @@
-package com.kel6.nontoncuyy;
+package com.Kel6.nontoncuyy;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -16,7 +16,6 @@ import androidx.fragment.app.FragmentTransaction;
 import java.util.List;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.kel6.nontoncuyy.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Load Default Fragment
         if (savedInstanceState == null) {
-            loadFragment(new com.kel6.nontoncuyy.HomeFragment());
+            loadFragment(new HomeFragment());
         }
     }
 
@@ -49,13 +48,13 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
             if (itemId == R.id.nav_home) {
-                loadFragment(new com.kel6.nontoncuyy.HomeFragment());
+                loadFragment(new HomeFragment());
                 return true;
             } else if (itemId == R.id.nav_search) {
-                loadFragment(new com.kel6.nontoncuyy.SearchFragment());
+                loadFragment(new SearchFragment());
                 return true;
             } else if (itemId == R.id.nav_watchlist) {
-                loadFragment(new com.kel6.nontoncuyy.WatchlistFragment());
+                loadFragment(new WatchlistFragment());
                 return true;
             }
             return false;

@@ -1,4 +1,4 @@
-package com.kel6.nontoncuyy
+package com.Kel6.nontoncuyy
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -69,6 +69,19 @@ class MovieViewModel : ViewModel() {
                 it.kategori.contains(genre, ignoreCase = true)
             }
             _filteredMovies.value = filtered
+        }
+    }
+
+    // Fungsi untuk menambah film baru via Repository
+    fun addFilm(film: Film, onResult: (Boolean) -> Unit) {
+        viewModelScope.launch {
+            _isLoading.value = true
+            val success = repository.addFilm(film)
+            if (success) {
+                fetchMovies() // Refresh data setelah berhasil menambah
+            }
+            _isLoading.value = false
+            onResult(success)
         }
     }
 }
