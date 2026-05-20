@@ -1,4 +1,4 @@
-package com.Kel6.nontoncuyy
+package com.kel6.nontoncuyy
 
 import io.ktor.client.call.*
 import io.ktor.client.request.*

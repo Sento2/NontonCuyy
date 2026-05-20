@@ -1,4 +1,4 @@
-package com.Kel6.nontoncuyy
+package com.kel6.nontoncuyy
 
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerialName

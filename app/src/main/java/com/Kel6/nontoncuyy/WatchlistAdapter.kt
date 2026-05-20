@@ -1,4 +1,4 @@
-package com.Kel6.nontoncuyy
+package com.kel6.nontoncuyy
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.Kel6.nontoncuyy.R
+import com.kel6.nontoncuyy.R
 import coil.load
 
 class WatchlistAdapter(

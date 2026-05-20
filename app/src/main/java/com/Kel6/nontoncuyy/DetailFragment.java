@@ -1,4 +1,4 @@
-package com.Kel6.nontoncuyy;
+package com.kel6.nontoncuyy;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,6 +13,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.kel6.nontoncuyy.MainActivity;
+import com.kel6.nontoncuyy.R;
 
 import java.util.ArrayList;
 import java.util.List;

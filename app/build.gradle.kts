@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.Kel6.nontoncuyy"
+    namespace = "com.kel6.nontoncuyy"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.Kel6.nontoncuyy"
+        applicationId = "com.kel6.nontoncuyy"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
