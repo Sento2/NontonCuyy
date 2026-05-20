@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.Kel6.nontoncuyy.R
 import com.google.android.material.imageview.ShapeableImageView
 
 data class Cast(val name: String, val role: String, val imageUrl: String? = null)
