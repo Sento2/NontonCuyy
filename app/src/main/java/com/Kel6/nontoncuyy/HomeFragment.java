@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -118,19 +117,13 @@ public class HomeFragment extends Fragment {
         tvDesc.setText(film.getRingkasan());
 
         btnPlay.setOnClickListener(v -> {
-            if (featuredFilm != null && featuredFilm.getUrlTrailer() != null && !featuredFilm.getUrlTrailer().isEmpty()) {
+            if (featuredFilm != null) {
                 String trailerUrl = featuredFilm.getUrlTrailer();
                 if (!trailerUrl.startsWith("http")) {
                     trailerUrl = "https://www.youtube.com/watch?v=" + trailerUrl;
                 }
-                try {
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(trailerUrl));
-                    startActivity(intent);
-                } catch (Exception e) {
-                    Toast.makeText(getContext(), "Could not open trailer", Toast.LENGTH_SHORT).show();
-                }
-            } else {
-                Toast.makeText(getContext(), "Trailer not available", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(trailerUrl));
+                startActivity(intent);
             }
         });
 

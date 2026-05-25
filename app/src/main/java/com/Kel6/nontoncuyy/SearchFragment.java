@@ -4,7 +4,6 @@ import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -83,6 +82,7 @@ public class SearchFragment extends Fragment {
     }
 
     private void setupGenres(View view) {
+        genreButtons.clear();
         TextView btnAll = view.findViewById(R.id.btnGenreAll);
         TextView btnAction = view.findViewById(R.id.btnGenreAction);
         TextView btnSciFi = view.findViewById(R.id.btnGenreSciFi);
@@ -100,25 +100,23 @@ public class SearchFragment extends Fragment {
     }
 
     private void handleGenreClick(TextView clickedButton, String category) {
-        // Update UI
-        int colorOnSurface = getThemeColor(android.R.attr.textColorPrimary); // Better than hardcoded
+        // Colors
+        int colorPrimary = ContextCompat.getColor(requireContext(), R.color.primary);
+        int colorBlack = ContextCompat.getColor(requireContext(), R.color.black);
+        int colorNeutral = ContextCompat.getColor(requireContext(), R.color.neutral);
 
         for (TextView btn : genreButtons) {
             if (btn == clickedButton) {
-                btn.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(requireContext(), R.color.primary)));
-                btn.setTextColor(ContextCompat.getColor(requireContext(), R.color.black));
+                btn.setBackgroundTintList(ColorStateList.valueOf(colorPrimary));
+                btn.setTextColor(colorBlack);
             } else {
                 btn.setBackgroundTintList(null);
-                btn.setTextColor(colorOnSurface);
+                btn.setTextColor(colorNeutral);
             }
         }
         
         viewModel.filterByGenre(category);
     }
 
-    private int getThemeColor(int attr) {
-        TypedValue typedValue = new TypedValue();
-        requireContext().getTheme().resolveAttribute(attr, typedValue, true);
-        return typedValue.data;
-    }
+
 }
